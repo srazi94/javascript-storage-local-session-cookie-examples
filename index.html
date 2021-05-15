@@ -1,11 +1,29 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
     <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
   </head>
   <body>
-    <h1>Hello there!</h1>
-    <a href="/me.html">My other page</a>
+    <h1>javascript-storage-local-session-cookie-examples!</h1>
+    <script>
+      //local storage example
+      (function localStorageExample(){
+        //setting  single Item in localStorage
+          let setSignleItme = localStorage.setItem('singleItem','welcome Sajjad');
+        //getting  single Item from localStorage
+         let getSignleItme = localStorage.setItem('singleItem','welcome Sajjad');
+         //setting  multiple Item (Object) in localStorage
+         let userObj = {'userId':13,name:"Sajjad Razi",token:"1765hgshf",mobileNo:9939319722};
+         let setMultipleItems = localStorage.setItem('userPayload',JSON.stringify(userObj));
+         //getting  multiple Item (Object) from localStorage
+         let getMultipleItems = localStorage.getItem('userPayload');
+         let userPayload = JSON.parse(getMultipleItems);
+         console.log(userPayload);
+         for (const [key, value] of Object.entries(userPayload)) {
+            console.log(`${key}: ${value}`);
+         }
+      }());
+    </script>
   </body>
 </html>
